@@ -23,7 +23,7 @@ gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :bran
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-0-stable'
 
 # Spree Internlization Extension
-gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :branch => '2-0-stable'
+#gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :branch => '2-0-stable'
 
 
 #gem 'spree_invoicing  Extension'
@@ -57,17 +57,14 @@ initializer 'spree_config.rb', <<-CODE
    Spree::Config.default_meta_description = "eshop ,ecommerce application"
    Spree::Config.site_url = "eshop.comapnyname.com"
    Spree::Config.currency_symbol_position  = :after
-
-   #For Disabling JIRAFE Services
-   Spree::Preference.where("`key` LIKE ?", "%spree/dash_configuration%").delete_all
-
+  #For Disb
 CODE
 
 generate 'spree_invoicing:install'
 
 
 if yes?("Do you want to create a AdminUser (Yes/No)?")
-  rake "spree_auth:admin:create"
+  rake 'spree_auth:admin:create'
 end
 
 
