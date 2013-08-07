@@ -21,7 +21,7 @@ Loading -- I need to update setps !
 ----------------------------------------
 
 How to Run rails template
-=======================================
+-----------------------------
 ```ruby
 1.rails new applicatoinname -m .../..templatepath/templatename.rb
   
@@ -38,6 +38,7 @@ How to Run rails template
  
  
  
- 
+```ruby
  Thanks,
  Sai Kiran Mothe  
+```
