@@ -67,7 +67,7 @@ generate 'spree_invoicing:install'
 
 
 if yes?("Do you want to create a AdminUser (Yes/No)?")
-  rake spree_auth:admin:create
+  rake "spree_auth:admin:create"
 end
 
 
