@@ -48,8 +48,6 @@ generate 'spree:install --sample=false'
 generate 'spree_i18n:install'
 
 initializer 'spree_config.rb', <<-CODE
-   SpreeI18n::Config.available_locales = [:en]
-   SpreeI18n::Config.supported_locales = [:en]
    Spree::Config.currency = "INR"
    Spree::Config.site_name = "ESHOP"
    Spree::Config.default_seo_title = "eshop"
