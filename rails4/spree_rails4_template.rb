@@ -1,8 +1,21 @@
 require 'rbconfig'
 require 'open-uri'
 
+create_file '.ruby-version'
+create_file '.rbenv-gemsets'
+inject_into_file '.ruby-version', after: "#The code goes below this line. Don't forget the Line break at the end\n" do <<-'RUBY'
+  2.0.0-p247
+RUBY
+end
+
+inject_into_file '.rbenv-gemsets', after: "#The code goes below this line. Don't forget the Line break at the end\n" do <<-'RUBY'
+ eshop
+RUBY
+end
+
 gsub_file 'Gemfile', "gem 'jquery-rails'", "gem 'jquery-rails', '~> 2.2.1'"
 gsub_file 'Gemfile', "# gem 'therubyracer', :platforms => :ruby", "gem 'therubyracer', :platforms => :ruby"
+gsub_file 'Gemfile', "gem 'rails'" ," gem 'rails', '4.1.6'"
 
 if File.read("#{destination_root}/Gemfile") !~ /assets.+coffee-rails/m
   gem "coffee-rails", :group => :assets
