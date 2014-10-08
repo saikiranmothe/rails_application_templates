@@ -4,7 +4,7 @@ require 'open-uri'
 #creating some sample files
 create_file '.ruby-version'
 create_file '.rbenv-gemsets'
-create_file 'app/assets/logo/spree_50.png'
+create_file 'app/assets/images/logo/spree_50.png'
 
 #insert ruby version to .ruby-version/rbenv version file
 insert_into_file ".ruby-version" ,:after => "" do
