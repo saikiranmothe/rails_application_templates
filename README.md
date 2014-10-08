@@ -1,11 +1,10 @@
-rails_application_templates
+#rails_application_templates
 ===========================
 
-================================================================================================
-How to create application template
+###How to create application template
 --------------------------------
 
-Guide/Simple setps to create rails application template ::
+#####Guide/Simple setps to create rails application template ::
 -------------------------------------------------------
 ```ruby
 1.
@@ -17,14 +16,15 @@ Guide/Simple setps to create rails application template ::
 7.
 8.
 ```
-Loading -- I need to update setps ! 
+###Loading -- I need to update setps ! 
 ----------------------------------------
 
-How to Run rails template
+##How to create a rails application with help of rails template
 -----------------------------
+
+
 ```ruby
 1.rails new applicatoinname -m .../..templatepath/templatename.rb
-  
   
   E.G ::  rails new demoblog -m home/Desktop/blog_template.rb
 ```
@@ -39,6 +39,6 @@ How to Run rails template
  
  
 ```ruby
- Thanks,
- Sai Kiran Mothe  
+			 Thanks,
+			 Sai Kiran Mothe  
 ```

@@ -11,7 +11,7 @@ end
 
 #Coping Rails Logo To Admin Interface Logo
 #Spree::Config[:admin_interface_logo] path
-copy_file "app/assets/images/rails.png", "app/assets/images/admin/bg/spree_50.png"
+# copy_file "app/assets/images/rails.png", "app/assets/images/admin/bg/spree_50.png"
 
 
 
@@ -30,11 +30,9 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 #gem 'spree_invoicing',:git => "https://github.com/saikiranmothe/spree_invoicing.git"
 # gem 'spree_invoicing',:path => '/home/sai.kiran/Projects'
 #gsub_file 'Gemfile', /#.*\n/, "\n"
-gem 'spree_invoicing' ,:git => "git@gitlab.partheas.net:kirana/spree_invoicing.git"
 
 run 'bundle install'
 
-run 'HTTP_PROXY="http://10.0.0.22:8888" bundle install'
 
 
 #Running Spree Generator Commands
@@ -51,19 +49,19 @@ initializer 'spree_il8n.rb', <<-CODE
 CODE
 
 =begin
-append_file 'config/initializers/spree.rb' do
-  ' SpreeI18n::Config.available_locales = [:en,:fr,:de]'
-end
-append_file 'config/initializers/spree.rb' do
-  ' SpreeI18n::Config.supported_locales = [:en,:fr,:de]'
-end
-#append 'config/initializers/spree.rb', "SpreeI18n::Config.available_locales = [:en,:fr,:de]"
-#append 'config/initializers/spree.rb',  " SpreeI18n::Config.supported_locales  = [:en,:fr,:de]"
+	append_file 'config/initializers/spree.rb' do
+	  ' SpreeI18n::Config.available_locales = [:en,:fr,:de]'
+	end
+	append_file 'config/initializers/spree.rb' do
+	  ' SpreeI18n::Config.supported_locales = [:en,:fr,:de]'
+	end
+	#append 'config/initializers/spree.rb', "SpreeI18n::Config.available_locales = [:en,:fr,:de]"
+	#append 'config/initializers/spree.rb',  " SpreeI18n::Config.supported_locales  = [:en,:fr,:de]"
 =end
 
 
 if yes?("Do you want to create Spree admin (Yes/No)?")
-  rake "kirana_admin:create"
+  rake "spree_auth:admin:create"
 end
 
 generate 'spree_invoicing:install'
