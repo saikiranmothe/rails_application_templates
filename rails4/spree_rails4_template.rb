@@ -1,12 +1,14 @@
 require 'rbconfig'
 require 'open-uri'
 
+#creating some sample files
 create_file '.ruby-version'
 create_file '.rbenv-gemsets'
+create_file 'app/assets/logo/spree_50.png'
 
 #insert ruby version to .ruby-version/rbenv version file
 insert_into_file ".ruby-version" ,:after => "" do
-  "ruby-2.0.0-451"
+  "2.0.0-p247"
 end 
 
 #insert ruby version to .ruby-version/rbenv version file
@@ -14,7 +16,7 @@ insert_into_file ".rbenv-gemsets" ,:after => "" do
   "eshop"
 end 
 
-gsub_file 'Gemfile', "# gem 'therubyracer', :platforms => :ruby", "gem 'therubyracer', :platforms => :ruby"
+gsub_file 'Gemfile', "# gem 'therubyracer'*", "gem 'therubyracer', :platforms => :ruby"
 gsub_file 'Gemfile', "gem 'rails'*" ," gem 'rails', '4.1.6'"
 
 if File.read("#{destination_root}/Gemfile") !~ /assets.+coffee-rails/m
